@@ -1,5 +1,5 @@
 // imrse atajo Snipets
-import React, { useState} from "react";
+import React, { useState } from "react";
 
 const initialForm = {
   id: null,
@@ -7,12 +7,34 @@ const initialForm = {
   type: "",
 };
 
-const CrudForm = () => {
+// destructuramos de las propiedades 
+const CrudForm = ({createData,updateData,dataToEdit,setDataToEdit}) => {
   const [form, setForm] = useState(initialForm);
 
-  const handleChange = (e) => {};
-  const handleSubmit = (e) => {};
-  const handleReset = (e) => {};
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!form.name || !form.type) {
+      alert("Datos Incompletos");
+      return;
+    }
+    
+    if(form.id===null) {
+      createData(form);
+    }else{
+      updateData(form)
+    }
+    handleReset();
+  };
+
+  const handleReset = (e) => {
+    setForm(initialForm);
+    setDataToEdit(null);
+  };
+
   return (
     <div>
       <h3>Agregar</h3>

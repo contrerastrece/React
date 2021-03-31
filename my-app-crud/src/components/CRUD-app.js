@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import CrudForm from "./CrudForm";
 import CrudTable from "./CrudTable";
 
@@ -37,12 +37,33 @@ const initialDB = [
 
 // sfc snippet
 const CRUDApp = () => {
-  const [db,setDb]=useState(initialDB)
+  const [db, setDb] = useState(initialDB);
+  // cuando esté en Nulo haremos un Insert, y si  tiene un valor haremos un Update
+  const [dataToEdit, setDataToEdit] = useState(null);
+
+  // creamos nuestras funtion para el CRUD
+  const createData = (data) => {
+    // console.log(data)
+    data.id=Date.now();
+    setDb([...db,data])
+  };
+  const updateData = (data) => {};
+  const deleteData = (id) => {};
+
   return (
     <>
       <h2>CRUD APP</h2>
-      <CrudForm></CrudForm>
-      <CrudTable data={db}></CrudTable>
+      <CrudForm
+        createData={createData}
+        updateData={updateData}
+        dataToEdit={dataToEdit}
+        setDataToEdit={setDataToEdit}
+      ></CrudForm>
+      <CrudTable
+        data={db}
+        setDataToEdit={setDataToEdit}
+        deleteData={deleteData}
+      ></CrudTable>
     </>
   );
 };
