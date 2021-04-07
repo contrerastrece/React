@@ -1,12 +1,15 @@
-const CrudTableRow = ({el}) => {
-  return (<tr>
-    <td>{el.name}</td>
-    <td>{el.type}</td>
-    <td>
-      <button>Edit</button>
-      <button>Delet</button>
-    </td>
-  </tr>  );
-}
- 
+const CrudTableRow = ({ el, setDataToEdit, deleteData }) => {
+  let { name, type, id } = el;
+  return (
+    <tr>
+      <td>{name}</td>
+      <td>{type}</td>
+      <td>
+        <button onClick={() => setDataToEdit(el)}>Edit</button>
+        <button onClick={() => deleteData(id)}>Delete</button>
+      </td>
+    </tr>
+  );
+};
+
 export default CrudTableRow;

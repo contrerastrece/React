@@ -40,14 +40,18 @@ const CRUDApp = () => {
   const [db, setDb] = useState(initialDB);
   // cuando esté en Nulo haremos un Insert, y si  tiene un valor haremos un Update
   const [dataToEdit, setDataToEdit] = useState(null);
-
   // creamos nuestras funtion para el CRUD
   const createData = (data) => {
     // console.log(data)
-    data.id=Date.now();
-    setDb([...db,data])
+    data.id = Date.now();
+    setDb([...db, data]);
   };
-  const updateData = (data) => {};
+
+  const updateData = (data) => {
+    let newData = db.map((el) => (el.id === data.id ? data : el));
+    setDb(newData);
+  };
+
   const deleteData = (id) => {};
 
   return (
