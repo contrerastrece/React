@@ -52,12 +52,23 @@ const CRUDApp = () => {
     setDb(newData);
   };
 
-  const deleteData = (id) => {};
+  const deleteData = (id) => {
+    let isDelete=window.confirm(`Estás seguro de eliminar al pokemon con el ID ${id}?`);
+
+    if(isDelete){
+      // filtramos a todos los elementos diferentes al id y esto lo guardamos a newData.
+      // finalmente mostramos newData filtrado
+      let newData=db.filter(el=>el.id!==id);
+      setDb(newData);
+    }else{
+      return;
+    }
+  };
 
   return (
     <>
       <h2>CRUD APP</h2>
-      <CrudForm
+      <CrudForm 
         createData={createData}
         updateData={updateData}
         dataToEdit={dataToEdit}

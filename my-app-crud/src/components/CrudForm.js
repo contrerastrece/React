@@ -10,7 +10,7 @@ const initialForm = {
 // destructuramos de las propiedades
 const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const [form, setForm] = useState(initialForm);
-
+// se ejecutará cuano la varibale dataToEdit haya cambiado
   useEffect(() => {
     if (dataToEdit) {
       setForm(dataToEdit);
