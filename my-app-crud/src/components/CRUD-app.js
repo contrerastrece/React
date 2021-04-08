@@ -53,14 +53,16 @@ const CRUDApp = () => {
   };
 
   const deleteData = (id) => {
-    let isDelete=window.confirm(`Estás seguro de eliminar al pokemon con el ID ${id}?`);
+    let isDelete = window.confirm(
+      `Estás seguro de eliminar al pokemon con el ID ${id}?`
+    );
 
-    if(isDelete){
+    if (isDelete) {
       // filtramos a todos los elementos diferentes al id y esto lo guardamos a newData.
       // finalmente mostramos newData filtrado
-      let newData=db.filter(el=>el.id!==id);
+      let newData = db.filter((el) => el.id !== id);
       setDb(newData);
-    }else{
+    } else {
       return;
     }
   };
@@ -68,17 +70,19 @@ const CRUDApp = () => {
   return (
     <>
       <h2>CRUD APP</h2>
-      <CrudForm 
-        createData={createData}
-        updateData={updateData}
-        dataToEdit={dataToEdit}
-        setDataToEdit={setDataToEdit}
-      ></CrudForm>
-      <CrudTable
-        data={db}
-        setDataToEdit={setDataToEdit}
-        deleteData={deleteData}
-      ></CrudTable>
+      <article className="grid-1-2">
+        <CrudForm
+          createData={createData}
+          updateData={updateData}
+          dataToEdit={dataToEdit}
+          setDataToEdit={setDataToEdit}
+        ></CrudForm>
+        <CrudTable
+          data={db}
+          setDataToEdit={setDataToEdit}
+          deleteData={deleteData}
+        ></CrudTable>
+      </article>
     </>
   );
 };
