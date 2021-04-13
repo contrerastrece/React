@@ -1,0 +1,33 @@
+{
+  "pokemons": [{
+      "id": 1,
+      "name": "bulbasaur",
+      "type": "planta 🍃"
+    },
+    {
+      "id": 2,
+      "name": "ivysaur",
+      "type": "planta 🍃"
+    },
+    {
+      "id": 3,
+      "name": "venusaur",
+      "type": "planta 🍃"
+    },
+    {
+      "id": 4,
+      "name": "charmander",
+      "type": "fuego 🔥"
+    },
+    {
+      "id": 5,
+      "name": "charmeleon",
+      "type": "fuego 🔥"
+    },
+    {
+      "id": 6,
+      "name": "charizard",
+      "type": "fuego 🔥"
+    }
+  ]
+}
