@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { helpHttp } from "../helpers/helpersHttp";
 import CrudForm from "./CrudForm";
 import CrudTable from "./CrudTable";
 
@@ -7,6 +8,22 @@ const CrudApi = () => {
   const [db, setDb] = useState([]);
   // cuando esté en Nulo haremos un Insert, y si  tiene un valor haremos un Update
   const [dataToEdit, setDataToEdit] = useState(null);
+
+  let api = helpHttp();
+  let url = "http://localhost:5000/pokemons";
+
+  useEffect(() => {
+    api.get(url).then((res) => {
+      // console.log(res);
+      // si no existe ningún error llenaremos nuestra db
+      if(!res.err){
+        setDb(res);
+      }else{
+        setDb(null);
+      }
+    });
+  }, []);
+
   // creamos nuestras funtion para el CRUD
   const createData = (data) => {
     // console.log(data)
