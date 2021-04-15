@@ -59,7 +59,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           name="type"
           placeholder="Type"
           onChange={handleChange}
-          value={form.value}
+          value={form.type}
         />
         <input type="submit" value="Send" />
         <input type="reset" value="Clear" onClick={handleReset} />

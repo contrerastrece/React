@@ -1,8 +1,9 @@
 {
-  "pokemons": [{
+  "pokemons": [
+    {
       "id": 1,
       "name": "bulbasaur",
-      "type": "planta 🍃"
+      "type": "Plant🍃"
     },
     {
       "id": 2,
@@ -17,17 +18,27 @@
     {
       "id": 4,
       "name": "charmander",
-      "type": "fuego 🔥"
+      "type": "Fire🔥"
     },
     {
       "id": 5,
       "name": "charmeleon",
-      "type": "fuego 🔥"
+      "type": "Fire 🔥"
     },
     {
       "id": 6,
       "name": "charizard",
       "type": "fuego 🔥"
+    },
+    {
+      "id": 1618440629477,
+      "name": "Gastly",
+      "type": "Ghost 👻"
+    },
+    {
+      "id": 1618448526801,
+      "name": "Gyarados",
+      "type": "Water ♒"
     }
   ]
 }
