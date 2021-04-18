@@ -25,7 +25,8 @@ const SongSearch = () => {
         helpHttp().get(artistUrl),
         helpHttp().get(songUrl)
       ]);
-      console.log(artistRes, songRes);
+      console.log(artistRes)
+      console.log(songRes)
 
       setBio(artistRes);
       setLyric(songRes);
@@ -44,7 +45,8 @@ const SongSearch = () => {
       <h2>Song Search</h2>
       {loading && <Loader />}
       <SongForm handleSearch={handleSearch} />
-      <SongDetails search={search} lyric={lyric} bio={bio} />
+      {/* si search tenga datos y loading sea falso muestrame el detalle */}
+      {search && !loading && (<SongDetails search={search} lyric={lyric} bio={bio} />)}
     </div>
   );
 };

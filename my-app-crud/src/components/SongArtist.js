@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 const SongArtist = () => {
-  return ( <div><h2>Nombre del Artista</h2></div> );
-}
- 
+  return (
+    <div>
+      <h2>Nombre del Artista</h2>
+    </div>
+  );
+};
+
 export default SongArtist;
