@@ -21,12 +21,12 @@ const SongSearch = () => {
       console.log(artistUrl, songUrl);
       setLoading(true);
 
-      const [artistRes, songRes] =await Promise.all([
+      const [artistRes, songRes] = await Promise.all([
         helpHttp().get(artistUrl),
-        helpHttp().get(songUrl)
+        helpHttp().get(songUrl),
       ]);
-      console.log(artistRes)
-      console.log(songRes)
+      console.log(artistRes);
+      console.log(songRes);
 
       setBio(artistRes);
       setLyric(songRes);
@@ -43,10 +43,14 @@ const SongSearch = () => {
   return (
     <div>
       <h2>Song Search</h2>
-      {loading && <Loader />}
-      <SongForm handleSearch={handleSearch} />
-      {/* si search tenga datos y loading sea falso muestrame el detalle */}
-      {search && !loading && (<SongDetails search={search} lyric={lyric} bio={bio} />)}
+      <article className="grid-1-3">
+        <SongForm handleSearch={handleSearch} />
+        {loading && <Loader />}
+        {/* si search tenga datos y loading sea falso muestrame el detalle */}
+        {search && !loading && (
+          <SongDetails search={search} lyric={lyric} bio={bio} />
+        )}
+      </article>
     </div>
   );
 };

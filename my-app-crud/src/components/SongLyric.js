@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-const SongLyric = ({lyric}) => {
+const SongLyric = ({title,lyrics}) => {
   return (
-    <div>
-      <h2>Letra de la canción</h2>
+    <section>
+      <h2>{title}</h2>
       {/* <p>`${search.lyric}`</p> */}
-    </div>
+
+      <blockquote style={{whiteSpace:"pre-wrap"}}>{lyrics}</blockquote>
+    </section>
   );
 };
 
