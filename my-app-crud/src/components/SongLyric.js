@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 const SongLyric = ({title,lyrics}) => {
   return (
     <section>

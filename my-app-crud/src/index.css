@@ -51,6 +51,28 @@ img{
   max-width: 100%;
   height:auto;
 }
+label{
+  padding:0.5rem 0;
+  margin:0 0 .5rem 0;
+  display:inline-block;
+  color:#444;
+  font-weight: bold;
+  line-height: 1;
+  cursor:pointer;
+}
+select{
+  border:thin solid #dedede;
+  border-radius: 0.25rem;
+  margin: 0 0 .5rem 0;
+  padding: 0.5rem;
+  display: block;
+  width:100%;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1;
+  background-color: transparent;
+}
+
 table{
   border-spacing: 0;
   border-collapse: collapse;
@@ -62,6 +84,7 @@ td{
   padding: 0.5rem;
   border-bottom: thin solid #dedede;
 }
+
 @media screen and (min-width:1024px){
   .grid-1-2{
     display: grid;

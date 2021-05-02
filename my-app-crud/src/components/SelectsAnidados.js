@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import SelectList from "./SelectList";
 
 const SelectsAnidados = () => {
   // variable de estado para el tipo de pokemon
   const [type, setType] = useState("");
 
-  // variable de estado para la región del Pokemon
-  const [region, setRegion] = useState("");
+  // variable de estado para la Generation del Pokemon
+  const [generation, setGeneration] = useState("");
 
   // variable de estadp para el pokemon selecionado
   const [pokemon, setPokemon] = useState("");
@@ -16,29 +16,29 @@ const SelectsAnidados = () => {
       <h2>Selects Anidados</h2>
       <h3>Pokemon</h3>
       <SelectList
-        title="type"
-        url=""
+        title="generation"
+        url="https://pokeapi.co/api/v2/generation"
         handleChange={(e) => {
-          setType(e.target.value);
+          setGeneration(e.target.value);
         }}
       />
-      
+
       {/* si type tiene valor mostrar el select del Region */}
-      {type && (
+      {generation && (
         <SelectList
-          title="region"
-          url=""
+          title="types"
+          url={`https://pokeapi.co/api/v2/generation/${generation}`}
           handleChange={(e) => {
-            setRegion(e.target.value);
+            setType(e.target.value);
           }}
         />
       )}
 
       {/* si Region tiene valor entonves mostrar el select del Pokemon */}
-      {region && (
+      {type && (
         <SelectList
-          title="pokemon"
-          url=""
+          title="pokemon_species"
+          url={`https://pokeapi.co/api/v2/generation/${generation}`}
           handleChange={(e) => {
             setPokemon(e.target.value);
           }}
@@ -47,7 +47,7 @@ const SelectsAnidados = () => {
 
       <pre>
         <code>
-          {type} - {region} - {pokemon}
+          {generation} - {type} - {pokemon}
         </code>
       </pre>
     </div>
