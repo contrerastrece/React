@@ -6,9 +6,20 @@ export const useForm = ( initialForm ,validateForm) => {
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
 
-  const handleChange = (e) => {};
-  // evento para que se dispare para las validaciones
-  const handleBlur = (e) => {};
+  const handleChange = (e) => {
+    const {name, value}=e.target;
+
+    setForm({
+      ...form,
+      [name]:value
+    })
+
+  };
+  // evento para que se dispare para las validaciones cuado pierda el foco
+  const handleBlur = (e) => {
+    handleChange(e);
+    setErrors(validateForm(form))
+  };
   // emvió de formulario
   const handleSubmit = (e) => {};
 
