@@ -1,4 +1,6 @@
 import { useForm } from "../hooks/useForm";
+import Loader from "./Loader";
+import Message from "./Message";
 
 // inicializando con cadenas vacías
 const initialForm = {
@@ -106,6 +108,8 @@ const ContactForm = () => {
 
         <input type="submit" value="enviar" />
       </form>
+    {loading && <Loader/>}
+    {response && <Message msg="Los datos han sido enviados" bgColor="#198754"/>}
     </div>
   );
 };
