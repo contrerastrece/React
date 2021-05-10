@@ -8,8 +8,8 @@ const Modal = ({ children }) => {
     <article className="modal is-open">
       <div className="modal__container">
         <button className="modal-close">X</button>
+        {children}
       </div>
-      {children}
     </article>
   );
 };
