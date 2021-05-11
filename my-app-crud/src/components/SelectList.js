@@ -3,7 +3,7 @@ import Loader from "./Loader";
 import Message from "./Message";
 
 const SelectList = ({ title, url, handleChange }) => {
-  console.log(url);
+  // console.log(url);
   // destructuramos el useFetch porque el hook personalizado nos retorna tres valores, data,error,loading
   const { data, error, loading } = useFetch(url);
 
@@ -25,7 +25,7 @@ const SelectList = ({ title, url, handleChange }) => {
 // option dinámico para no estar haciendo data.poke_species o data.types
 // lo utilizamos inteligentemente en el title el nombre de la propiedad
   let options = data[title];
-  console.log(options);
+  // console.log(options);
 
   return title === "generation" ? (
     <div>
